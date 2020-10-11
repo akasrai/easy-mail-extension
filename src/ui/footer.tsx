@@ -11,7 +11,7 @@ const Footer = () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://akasrai.github.io/"
+          href="https://twitter.com/akaskyiar"
         >
           Akas
         </a>
