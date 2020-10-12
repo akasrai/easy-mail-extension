@@ -35,7 +35,7 @@ export const listenIncomingMails = (username: string) => {
       return data;
     })
     .catch((err) => {
-      console.log(err);
+      throw err;
     });
 };
 
@@ -83,6 +83,6 @@ export const getMails = (username: string) => {
       return data;
     })
     .catch((err) => {
-      console.log(err);
+      throw err;
     });
 };

@@ -25,7 +25,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,js,tsx}'",
+    "lint:fix": "tslint --fix -c tslint.json 'src/**/*.{ts,js,tsx}'",
+    "prettify": "prettier --single-quote --write \"src/**/*.{ts,js,json,tsx}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -57,8 +60,7 @@
     "react-test-renderer": "^16.13.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^5.0.0",
-    "tslint-react-a11y": "^1.1.0"
+    "tslint-react": "^5.0.0"
   },
   "husky": {
     "hooks": {

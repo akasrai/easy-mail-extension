@@ -104,37 +104,38 @@ const CreateEmail = ({ className, createEmail }: CreateEmailProps) => {
       <Input
         min={1}
         max={15}
-        type="text"
+        type='text'
         required={true}
-        name="username"
-        placeholder="username"
+        name='username'
+        placeholder='username'
         onChange={generateEmail}
         className={`mail-username-input f-larger ${error && 'is-invalid'}`}
       />
 
       {email && (
-        <div className="position-relative">
+        <div className='position-relative'>
           <Input
-            type="text"
-            name="email"
+            type='text'
+            name='email'
             value={email}
             readonly={true}
-            placeholder="email"
+            placeholder='email'
             className={`mail-username-input f-larger ${error && 'is-invalid'}`}
           />
           <span
-            title="copy"
-            className="copy-mail"
+            title='copy'
+            role='button'
+            className='copy-mail'
             onClick={() => navigator.clipboard.writeText(email)}
           >
-            <i className="icon ion-md-copy f-larger" />
+            <i className='icon ion-md-copy f-larger' />
           </span>
         </div>
       )}
 
       <Button
-        name="Create"
-        className="md btn-danger"
+        name='Create'
+        className='md btn-danger'
         disabled={isHandlingAuth}
       />
     </form>

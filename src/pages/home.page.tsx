@@ -47,27 +47,28 @@ const HomePage = () => {
 
   return (
     <MainLayout>
-      <div className="col-md-12 p-md-0 m-auto">
+      <div className='col-md-12 p-md-0 m-auto'>
         {newEmail || !isAuthenticated ? (
           <Fragment>
-            <h5 className="text-primary mb-0 mt-5 mb-1">Email Generator</h5>
-            <span className="small mb-4 d-block text-muted">
+            <h5 className='text-primary mb-0 mt-5 mb-1'>Email Generator</h5>
+            <span className='small mb-4 d-block text-muted'>
               All you need is enter a username and start receiving the emails
               right away. Cheers{' '}
-              <span role="img" aria-label="star">
+              <span role='img' aria-label='star'>
                 ✨
               </span>
-              <span role="img" aria-label="celebrate">
+              <span role='img' aria-label='celebrate'>
                 🎉
               </span>
             </span>
 
             {isAuthenticated && (
               <Fragment>
-                <div className="alert alert-info p-2 mt-3 small">
+                <div className='alert alert-info p-2 mt-3 small'>
                   Welcome! <strong>{email}</strong>.<br />
                   <div
-                    className="btn btn-info btn-sm mt-3"
+                    role='button'
+                    className='btn btn-info btn-sm mt-3'
                     onClick={() => setCreateNewEmail(false)}
                   >
                     Goto Inbox
@@ -79,7 +80,7 @@ const HomePage = () => {
 
             <CreateEmail
               createEmail={setCreateNewEmail}
-              className="col-md-12 p-0 mb-3"
+              className='col-md-12 p-0 mb-3'
             />
           </Fragment>
         ) : (

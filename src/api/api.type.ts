@@ -19,13 +19,13 @@ export interface Email {
   messageId: string;
   spam_score: number;
   spam_report: string;
-  from_parsed: Array<FromParsed>;
+  from_parsed: FromParsed[];
 }
 
 export interface MailResponse {
   inbox: {
     count: number;
     result: string;
-    emails: Array<Email>;
+    emails: Email[];
   };
 }

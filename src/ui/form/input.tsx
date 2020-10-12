@@ -21,7 +21,7 @@ interface InputProps {
   hideLabel?: boolean;
   placeholder?: string;
   value?: string | number;
-  options?: Array<Options>;
+  options?: Options[];
   onChange?: (e: any) => any;
 }
 
@@ -43,8 +43,8 @@ export const Input = (props: InputProps) => {
   } = props;
 
   return (
-    <div className="col-12 form-group p-0">
-      {label && <label className="small mb-0">{label}</label>}
+    <div className='col-12 form-group p-0'>
+      {label && <label className='small mb-0'>{label}</label>}
       <input
         id={id}
         ref={ref}
@@ -53,7 +53,7 @@ export const Input = (props: InputProps) => {
         value={value}
         minLength={min}
         maxLength={max}
-        autoComplete="off"
+        autoComplete='off'
         onChange={onChange}
         required={required}
         readOnly={readonly}
@@ -68,15 +68,15 @@ export const TextArea = (props: InputProps) => {
   const { name, label, className, required, placeholder } = props;
 
   return (
-    <div className="col-12 form-group p-0">
-      {label && <label className="small mb-0">{label}</label>}
+    <div className='col-12 form-group p-0'>
+      {label && <label className='small mb-0'>{label}</label>}
       <textarea
         name={name}
         rows={Number(4)}
         required={required}
         placeholder={placeholder}
         className={`${className} form-control`}
-      ></textarea>
+      />
     </div>
   );
 };
@@ -89,7 +89,7 @@ export const RadioButton = (props: InputProps) => {
       <input
         id={id}
         name={name}
-        type="radio"
+        type='radio'
         value={value}
         required={required}
         onChange={onChange ? (e) => onChange(e.target.value) : () => {}}
@@ -106,13 +106,13 @@ export const Select = (props: InputProps) => {
 
   return (
     <>
-      {label && <label className="small mb-0">{label}</label>}
+      {label && <label className='small mb-0'>{label}</label>}
       <select
         name={name}
         required={required}
         className={`custom-select ${className}`}
       >
-        <option value="">{placeholder}</option>
+        <option value=''>{placeholder}</option>
         {options.map((option, key) => (
           <option key={key} value={option.value}>
             {option.name}

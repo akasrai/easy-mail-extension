@@ -12,7 +12,7 @@ import SingleView from './view-email.component';
 
 interface InboxProps {
   loading: boolean;
-  emails: Array<Email>;
+  emails: Email[];
   selectedEmail: Email | undefined;
   viewEmailById: (id: string) => void;
   selectEmail: (email: Email | undefined) => void;
@@ -29,7 +29,7 @@ const Inbox = ({ createEmail }: { createEmail: (param: boolean) => void }) => {
   const [synced, setSynced] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedEmail, selectEmail] = useState<Email>();
-  const [emails, setEmails] = useState<Array<Email>>([]);
+  const [emails, setEmails] = useState<Email[]>([]);
   const [currentUser, setCurrentUser] = useState<string>(userEmailId);
 
   const viewEmailById = (messageId: string) => {
