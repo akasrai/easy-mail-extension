@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 
-import MainLayout from 'ui/main.layout';
-
 import { AuthContext } from 'app/app.context';
 
 import { MailResponse, Email } from 'api/api.type';
@@ -9,14 +7,6 @@ import { getMails, listenIncomingMails } from 'api/request.api';
 
 import EmailList from './email-list.component';
 import SingleView from './view-email.component';
-
-interface InboxProps {
-  loading: boolean;
-  emails: Email[];
-  selectedEmail: Email | undefined;
-  viewEmailById: (id: string) => void;
-  selectEmail: (email: Email | undefined) => void;
-}
 
 const getUserName = (email: string) => {
   const nameSpace = process.env.REACT_APP_TEST_MAIL_NAMESPACE || '';
