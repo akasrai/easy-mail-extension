@@ -41,5 +41,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.{ts,js, tsx}": [
+      "prettier --single-quote --write",
+      "tslint --fix -c tslint.json 'src/**/*.{ts,js}'",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-test-renderer": "^16.9.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^5.0.0",
+    "tslint-react-a11y": "^1.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
