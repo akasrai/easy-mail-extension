@@ -52,7 +52,7 @@ const Inbox = ({ createEmail }: { createEmail: (param: boolean) => void }) => {
     if (!synced) fetchOldMails();
     if (synced && currentUser === userEmailId) subscribeLiveMails();
     if (synced && currentUser !== userEmailId) fetchOldMails();
-  }, [emails, userEmailId]);
+  }, [emails, userEmailId, synced, currentUser]);
 
   return (
     <Fragment>
