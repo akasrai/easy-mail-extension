@@ -1,20 +1,22 @@
 import React, {
   Fragment,
-  useContext,
-  useEffect,
-  useReducer,
   useState,
+  useEffect,
+  useContext,
+  useReducer,
 } from 'react';
 
 import MainLayout from 'ui/main.layout';
 
 import * as app from 'app/app.state';
+import { LS_KEY } from 'app/app.constant';
 import { AuthContext } from 'app/app.context';
+
 import Inbox from './components/inbox.component';
 import CreateEmail from './components/create-email.component';
-import { LS_KEY } from 'app/app.constant';
-import { LS } from 'helper/local-storage-helper';
+
 import { ApiResponse } from 'api/api.type';
+import { LS } from 'helper/local-storage-helper';
 
 const HomePage = () => {
   const [checkAuth, setCheckAuth] = useState<boolean>(true);
@@ -47,28 +49,28 @@ const HomePage = () => {
 
   return (
     <MainLayout>
-      <div className='col-md-12 p-md-0 m-auto'>
+      <div className="col-md-12 p-md-0 m-auto">
         {newEmail || !isAuthenticated ? (
           <Fragment>
-            <h5 className='text-primary mb-0 mt-5 mb-1'>Email Generator</h5>
-            <span className='small mb-4 d-block text-muted'>
+            <h5 className="text-primary mb-0 mt-5 mb-1">Email Generator</h5>
+            <span className="small mb-4 d-block text-muted">
               All you need is enter a username and start receiving the emails
               right away. Cheers{' '}
-              <span role='img' aria-label='star'>
+              <span role="img" aria-label="star">
                 ✨
               </span>
-              <span role='img' aria-label='celebrate'>
+              <span role="img" aria-label="celebrate">
                 🎉
               </span>
             </span>
 
             {isAuthenticated && (
               <Fragment>
-                <div className='alert alert-info p-2 mt-3 small'>
+                <div className="alert alert-info p-2 mt-3 small">
                   Welcome! <strong>{email}</strong>.<br />
                   <div
-                    role='button'
-                    className='btn btn-info btn-sm mt-3'
+                    role="button"
+                    className="btn btn-info btn-sm mt-3"
                     onClick={() => setCreateNewEmail(false)}
                   >
                     Goto Inbox
@@ -80,7 +82,7 @@ const HomePage = () => {
 
             <CreateEmail
               createEmail={setCreateNewEmail}
-              className='col-md-12 p-0 mb-3'
+              className="col-md-12 p-0 mb-3"
             />
           </Fragment>
         ) : (
