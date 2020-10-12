@@ -9,7 +9,7 @@ const Image = (props: ImageProps) => {
   const { src, className } = props;
   return (
     <div className={`${className}`}>
-      <img alt="media" src={src} />
+      <img alt='media' src={src} />
     </div>
   );
 };

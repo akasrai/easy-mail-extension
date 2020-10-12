@@ -14,7 +14,7 @@ export const Button = (props: ButtonProps) => {
 
   return (
     <button
-      type="submit"
+      type='submit'
       onClick={onClick}
       disabled={disabled}
       className={`btn btn-${className} btn-block shake`}

@@ -1,20 +1,22 @@
 import React, {
   Fragment,
-  useContext,
-  useEffect,
-  useReducer,
   useState,
+  useEffect,
+  useContext,
+  useReducer,
 } from 'react';
 
 import MainLayout from 'ui/main.layout';
 
 import * as app from 'app/app.state';
+import { LS_KEY } from 'app/app.constant';
 import { AuthContext } from 'app/app.context';
+
 import Inbox from './components/inbox.component';
 import CreateEmail from './components/create-email.component';
-import { LS_KEY } from 'app/app.constant';
-import { LS } from 'helper/local-storage-helper';
+
 import { ApiResponse } from 'api/api.type';
+import { LS } from 'helper/local-storage-helper';
 
 const HomePage = () => {
   const [checkAuth, setCheckAuth] = useState<boolean>(true);
@@ -67,6 +69,7 @@ const HomePage = () => {
                 <div className="alert alert-info p-2 mt-3 small">
                   Welcome! <strong>{email}</strong>.<br />
                   <div
+                    role="button"
                     className="btn btn-info btn-sm mt-3"
                     onClick={() => setCreateNewEmail(false)}
                   >

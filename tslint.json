@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "tslint:latest",
-    "tslint-react",
-    "tslint-config-prettier",
-    "tslint-react-a11y"
-  ],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "jsx-wrap-multiline": false,
     "jsx-boolean-value": false,
@@ -18,14 +13,7 @@
     "no-implicit-dependencies": false,
     "no-empty": [true, "allow-empty-functions"],
     "no-empty-interface": false,
-    "react-a11y-lang": false,
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "paths": ["src"]
-        }
-      }
-    }
+    "no-shadowed-variable": false
   },
   "linterOptions": {
     "exclude": ["src/serviceWorker.ts"]

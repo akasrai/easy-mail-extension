@@ -1,7 +1,6 @@
 import moment from 'moment';
 import React, { Fragment, useContext } from 'react';
 
-import Footer from 'ui/footer';
 import { FlexRow } from 'ui/flex';
 
 import { AuthContext } from 'app/app.context';
@@ -17,7 +16,7 @@ export const Empty = ({ message }: { message: string }) => (
   <FlexRow className="justify-content-center shake">
     <div className="row m-0 text-center empty-email-content">
       <div className="w-100">
-        <span className="icon ion-logo-dropbox text-danger empty-icon"></span>
+        <span className="icon ion-logo-dropbox text-danger empty-icon" />
       </div>
       <span className="col-12 lead d-block text">{message}</span>
     </div>
@@ -33,6 +32,7 @@ const SingleView = ({ email, selectEmail }: SingleViewProps) => {
         <div className="d-flex">
           <i
             title="Back"
+            role="button"
             className="icon ion-md-arrow-back"
             onClick={() => selectEmail(undefined)}
           />

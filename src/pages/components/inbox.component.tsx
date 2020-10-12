@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 
-import MainLayout from 'ui/main.layout';
-
 import { AuthContext } from 'app/app.context';
 
 import { MailResponse, Email } from 'api/api.type';
@@ -9,14 +7,6 @@ import { getMails, listenIncomingMails } from 'api/request.api';
 
 import EmailList from './email-list.component';
 import SingleView from './view-email.component';
-
-interface InboxProps {
-  loading: boolean;
-  emails: Array<Email>;
-  selectedEmail: Email | undefined;
-  viewEmailById: (id: string) => void;
-  selectEmail: (email: Email | undefined) => void;
-}
 
 const getUserName = (email: string) => {
   const nameSpace = process.env.REACT_APP_TEST_MAIL_NAMESPACE || '';
@@ -29,7 +19,7 @@ const Inbox = ({ createEmail }: { createEmail: (param: boolean) => void }) => {
   const [synced, setSynced] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedEmail, selectEmail] = useState<Email>();
-  const [emails, setEmails] = useState<Array<Email>>([]);
+  const [emails, setEmails] = useState<Email[]>([]);
   const [currentUser, setCurrentUser] = useState<string>(userEmailId);
 
   const viewEmailById = (messageId: string) => {
@@ -62,7 +52,7 @@ const Inbox = ({ createEmail }: { createEmail: (param: boolean) => void }) => {
     if (!synced) fetchOldMails();
     if (synced && currentUser === userEmailId) subscribeLiveMails();
     if (synced && currentUser !== userEmailId) fetchOldMails();
-  }, [emails, userEmailId]);
+  }, [emails, userEmailId, synced, currentUser]);
 
   return (
     <Fragment>
